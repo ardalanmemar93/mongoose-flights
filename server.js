@@ -10,8 +10,8 @@ require('dotenv').config();
 require('./config/database');
 
 const indexRouter = require('./routes/index');
-const flightsRouter = require('./routes/flights');
-const destinationsRouter = require('./routes/destinations');
+const flightRouter = require('./routes/flights');
+const destinationRouter = require('./routes/destinations')
 
 
 var app = express();
@@ -28,8 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-app.use('/flights', flightsRouter);
-app.use('/', destinationsRouter);
+app.use('/flights', flightRouter);
+app.use('/', destinationRouter)
+app.use('/delete', flightRouter)
 
 
 
