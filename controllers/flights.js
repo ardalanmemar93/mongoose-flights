@@ -21,7 +21,6 @@ function getDefaultDate() {
 async function show(req, res) {
   try {
     const flight = await Flight.findById(req.params.id);
-
     res.render("flights/show", {
       flight,
       title: "Details",
@@ -44,18 +43,19 @@ async function index(req, res) {
 }
 
 async function create(req, res) {
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key];
+  }
+  const flight = new Flight(req.body);
   try {
-    const flight = new Flight(req.body);
-    await flight.validate(); 
-    await flight.save(); 
+    await flight.save();
     res.redirect('/flights');
   } catch (err) {
     console.error(err);
-    res.status(500).send('An error occurred.');
+    res.render('flights/new');
   }
 }
 
 function newFlight(req, res) {
-  
   res.render('flights/new');
 }
