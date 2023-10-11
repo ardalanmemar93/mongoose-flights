@@ -25,7 +25,6 @@
           <td class="airline"><%= f.airline %></td>
           <td class="airport"><%= f.airport %></td>
           <td class="flightNo"><%= f.flightNo %></td>
-          <td class="departs_day"><%= f.departs.toDateString().slice(0, 3) %> </td>
           <td class="departs_date"><%= f.departs.toDateString() %></td>
           <td class="departs_time"><%= f.departs.toTimeString() %></td>
           <td class="detail"><a href="/flights/<%= f.id %>"><div class="button">Details</div></a></td>
