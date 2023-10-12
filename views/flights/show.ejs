@@ -27,19 +27,19 @@
         <thead>
           <tr>
             <th class="airline">Airline:</th>
-            <td class="td1"><%= flight.airline %> <i class="fa fa-plane"></i></td>
+            <td class="td1"><%= flight.airline %></td>
           </tr>
           <tr>
             <th>Airport:</th>
-            <td class="td1"><%= flight.airport %> <i class="fas fa-city"></i></td>
+            <td class="td1"><%= flight.airport %></td>
           </tr>
           <tr>
             <th>Flight #:</th>
-            <td class="td1"><%= flight.flightNo %> <i class="fa fa-hashtag"></i></td>
+            <td class="td1"><%= flight.flightNo %></td>
           </tr>
           <tr>
             <th>Departure:</th>
-            <td class="td1"><%= flight.departs %> <i class="fas fa-clock"></i></td>
+            <td class="td1"><%= flight.departs %></td>
           </tr>
         </thead>
       </table>
@@ -60,7 +60,6 @@
         <% flight.destination.forEach((f) => { %>
         <tr>
           <th class="dest">
-            <i class="fas fa-city"></i>
             <%= f.airport %>
           </th>
           <td class="td1"><%= f.arrival %></td>
@@ -68,10 +67,6 @@
             <form action="/destinations/<%= flight._id %>/<%= f._id %>?_method=DELETE" method="POST">
               <button class="delete" type="submit">
                 <span>remove</span>
-                <div class="icon">
-                  <i class="fa fa-times"></i>
-                  <i class="fa fa-check"></i>
-                </div>
               </button>
             </form>
           </td>
@@ -115,21 +110,16 @@
       <% ticket.forEach((t) => { %>
       <tr>
         <th class="dest">
-          <i class="fas fa-chair"></i>
           <%= t.seat %>
         </th>
         <td class="td1">
-          <i class="fas fa-dollar-sign"></i>
           <%= t.price %>
         </td>
         <td class="detail">
           <form action="/tickets/<%= t.flight %>/<%= t._id %>?_method=DELETE" method="POST">
             <button class="delete" type="submit">
               <span>remove</span>
-              <div class="icon">
-                <i class="fa fa-times"></i>
-                <i class="fa fa-check"></i>
-              </div>
+          
             </button>
           </form>
         </td>
