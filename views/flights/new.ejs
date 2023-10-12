@@ -1,14 +1,10 @@
 <%- include('../partials/header') %>
 <nav>
   <a href="/flights" id="all-flights" class="nav-link">
-    <span class="nav-link-span">
-      <span class="u-nav">All Flights</span>
-    </span>
+    <span class="nav-link-span u-nav">All Flights</span>
   </a>
   <a href="/flights/new" id="new-flight" class="nav-link active">
-    <span class="nav-link-span">
-      <span class="u-nav">New Flight</span>
-    </span>
+    <span class="nav-link-span u-nav">New Flight</span>
   </a>
 </nav>
 </header>
@@ -18,31 +14,31 @@
   </div>
   <div class="forms">
     <form action="/flights" method="POST">
-      <label>Airline:</label>
-      <select name="airline">
-        <option value="American">American</option>
-        <option value="Delta">Delta</option>
-        <option value="Southwest">Southwest</option>
-        <option value="United">United</option>
-      </select>
-      <br>
-      <label>Airport:</label>
-      <select name="airport">
-        <option value="DFW">DFW</option>
-        <option value="DEN">DEN</option>
-        <option value="LAX">LAX</option>
-        <option value="SAN">SAN</option>
-        <option value="ATL">ATL</option>
-        <option value="AUS">AUS</option>
-      </select>
-      <br>
-      <label>Flight Number:</label>
-      <input type="number" name="flightNo" required>
-      <br>
-      <label>Departs:</label>
-      <input type="datetime-local" name="departs" value="<%= departsDate %>">
-      <br>
-      <button  class="submit">Add Flight</button>
+      <label>Airline:
+        <select name="airline">
+          <option value="American">American</option>
+          <option value="Delta">Delta</option>
+          <option value="Southwest">Southwest</option>
+          <option value="United">United</option>
+        </select>
+      </label>
+      <label>Airport:
+        <select name="airport">
+          <option value="DFW">DFW</option>
+          <option value="DEN">DEN</option>
+          <option value="LAX">LAX</option>
+          <option value="SAN">SAN</option>
+          <option value="ATL">ATL</option>
+          <option value="AUS">AUS</option>
+        </select>
+      </label>
+      <label>Flight Number:
+        <input type="number" name="flightNo" required>
+      </label>
+      <label>Departs:
+        <input type="datetime-local" name="departs" value="<%= departsDate %>">
+      </label>
+      <button class="submit">Add Flight</button>
     </form>
   </div>
 </main>

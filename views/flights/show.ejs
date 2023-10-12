@@ -1,19 +1,13 @@
 <%- include('../partials/header') %>
 <nav>
   <a href="/flights/<%= flight._id %>" id="flight-details" class="nav-link active">
-    <span class="nav-link-span">
-      <span class="u-nav">Flight Details</span>
-    </span>
+    <span class="nav-link-span u-nav">Flight Details</span>
   </a>
   <a href="/flights" class="nav-link">
-    <span class="nav-link-span">
-      <span class="u-nav">All Flights</span>
-    </span>
+    <span class="nav-link-span u-nav">All Flights</span>
   </a>
   <a href="/flights/new" class="nav-link">
-    <span class="nav-link-span">
-      <span class="u-nav">New Flight</span>
-    </span>
+    <span class="nav-link-span u-nav">New Flight</span>
   </a>
 </nav>
 </header>
@@ -22,9 +16,7 @@
     <h2>Flight Details</h2>
   </div>
   <section id="show-page">
-    <div>
-      <h2>Destination(s):</h2>
-    </div>
+    <h2>Destination(s):</h2>
     <% if (flight.destination.length) { %>
     <table>
       <thead>
@@ -37,15 +29,11 @@
       <tbody class="tb1">
         <% flight.destination.forEach((f) => { %>
         <tr>
-          <th class="dest">
-            <%= f.airport %>
-          </th>
+          <th class="dest"><%= f.airport %></th>
           <td class="td1"><%= f.arrival %></td>
           <td class="detail">
             <form action="/destinations/<%= flight._id %>/<%= f._id %>?_method=DELETE" method="POST">
-              <button class="delete" type="submit">
-                <span>remove</span>
-              </button>
+              <button class="delete" type="submit"><span>remove</span></button>
             </form>
           </td>
         </tr>
@@ -70,8 +58,7 @@
       <label>Arrival Time:</label>
       <input type="datetime-local" name="arrival" value="" />
       <br>
-      <button class="submit">Submit</button> 
-
+      <button class="submit">Submit</button>
     </form>
   </div>
   <br>
@@ -88,18 +75,11 @@
     <tbody class="tb1">
       <% ticket.forEach((t) => { %>
       <tr>
-        <th class="dest">
-          <%= t.seat %>
-        </th>
-        <td class="td1">
-          <%= t.price %>
-        </td>
+        <th class="dest"><%= t.seat %></th>
+        <td class="td1"><%= t.price %></td>
         <td class="detail">
           <form action="/tickets/<%= t.flight %>/<%= t._id %>?_method=DELETE" method="POST">
-            <button class="delete" type="submit">
-              <span>remove</span>
-          
-            </button>
+            <button class="delete" type="submit"><span>remove</span></button>
           </form>
         </td>
       </tr>
