@@ -1,39 +1,53 @@
 <%- include('../partials/header') %>
-        <a href="/flights" id="all" class="nav-link active"><span class="nav-link-span"><span class="u-nav">All Flights</span></span></a>
-        <a href="/flights/new" id="new" class="nav-link"><span class="nav-link-span"><span class="u-nav">New Flight</span></span></a>
-      </div>
-    </nav>
-  </header>
-  <main>
-  <div class="top"><h2>Flight List</h2></div>
+<nav>
+  <a href="/flights" id="new-all-flights" class="nav-link active">
+    <span class="nav-link-span">
+      <span class="u-nav">All Flights</span>
+    </span>
+  </a>
+  <a href="/flights/new" id="new-flight" class="nav-link">
+    <span class="nav-link-span">
+      <span class="u-nav">New Flight</span>
+    </span>
+  </a>
+</nav>
+</header>
+<main>
+  <div class="top">
+    <h2>Flight List</h2>
+  </div>
   <div class="table">
-  <table class="tb">
-    <thead>
-      <tr>
-        <th class="title">Airline</th>
-        <th class="title">Airport</th>
-        <th class="title">Flight #</th>
-        <th class="title">Day</th>
-        <th class="title">Departing Date</th>
-        <th class="title">Time</th>
-        <th class="title"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% flights.forEach((f) => { %>
+    <table class="flight-table">
+      <thead>
         <tr>
-          <td class="airline"><%= f.airline %></td>
-          <td class="airport"><%= f.airport %></td>
-          <td class="flightNo"><%= f.flightNo %></td>
-          <td class="departs_day"><%= moment(f.departs).format("ddd") %> </td>
-          <td class="departs_date"><%= moment(f.departs).format("LL") %></td>
-          <td class="departs_time"><%= moment(f.departs).format("LT z") %></td>
-          <td class="detail"><a href="/flights/<%= f.id %>"><div class="button">Details</div></a></td>
+          <th class="itle">Airline</th>
+          <th class="title">Airport</th>
+          <th class="title">Flight #</th>
+          <th class="title">Day</th>
+          <th class="title">Departing Date</th>
+          <th class="title">Time</th>
+          <th class="title"></th>
         </tr>
-      <% }); %>
-    </tbody>
-  </table>
-</div>
-  </main>
+      </thead>
+      <tbody>
+        <% flights.forEach((f) => { %>
+          <tr>
+            <td class="airline"><%= f.airline %></td>
+            <td class="airport"><%= f.airport %></td>
+            <td class="flightNo"><%= f.flightNo %></td>
+            <td class="departs-day"><%= moment(f.departs).format("ddd") %> </td>
+            <td class="departs-date"><%= moment(f.departs).format("LL") %></td>
+            <td class="departs-time"><%= moment(f.departs).format("LT z") %></td>
+            <td class="detail-link">
+              <a href="/flights/<%= f.id %>">
+                <button class="details-button">Details</button>
+              </a>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</main>
 </body>
 </html>

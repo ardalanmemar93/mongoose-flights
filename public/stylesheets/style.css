@@ -1,21 +1,92 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #E1D5E7;
 }
 
 a {
   color: #00B7FF;
 }
 
-.delete-form {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.delete-form button {
-  color: red;
-}
 
 li {
   list-style: none;
+}
+
+button {
+  background-color: #FFB2B2; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  border-radius: 1rem;
+}
+
+
+button.delete {
+  background-color: #FF3333; 
+}
+
+.tickets-button {
+  background-color: #90EE90; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  border-radius: rem;
+} 
+.submit {
+  background-color: #90EE90; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  border-radius: 1rem;
+}
+
+.add-ticket {
+  background-color: #90EE90; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  border-radius: 1rem;
+}
+.details-button {
+  background-color: lightblue; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  border-radius: 1rem;
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+}
+.forms {
+  background-color: lightgray;
+}
+
+.remove {
+  background-color: #FF3333; 
+}
+
+.u-nav {
+  margin: 2rem;
+}
+.table {
+  background-color: lightgray;
+}
+.top {
+  text-align: center;
 }

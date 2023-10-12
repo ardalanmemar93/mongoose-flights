@@ -1,23 +1,40 @@
 <%- include('../partials/header') %>
-        <a href="/tickets/new" id="new" class="nav-link active"><span class="nav-link-span"><span class="u-nav">New Ticket</span></span></a>
-        <a href="/flights" id="all" class="nav-link"><span class="nav-link-span"><span class="u-nav">All Flights</span></span></a>
-        <a href="/flights/new" id="new" class="nav-link"><span class="nav-link-span"><span class="u-nav">New Flight</span></span></a>
-      </div>
-    </nav>
-  </header>
+<nav>
+  <a href="/tickets/new" id="new-ticket" class="nav-link active">
+    <span class="nav-link-span">
+      <span class="u-nav">New Ticket</span>
+    </span>
+  </a>
+  <a href="/flights" id="all" class="nav-link">
+    <span class="nav-link-span">
+      <span class="u-nav">All Flights</span>
+    </span>
+  </a>
+  <a href="/flights/new" id="new-flight" class="nav-link">
+    <span class="nav-link-span">
+      <span class "u-nav">New Flight</span>
+    </span>
+  </a>
+</nav>
+</header>
 <main>
-<div class="top"><h2>New Ticket</h2></div>
-<div class="forms"><br>
-<form action="/tickets/<%= flight._id %>" method="POST">
-  <label>Seat:</label>
-    <input type="text" name="seat" required pattern="[A-F][1-9]\d?"> <br> 
-    <p>example F9</p>
-<br>
-  <label>Price:</label>
-    <input type="number" name="price" required>
-<br>
-  <label>Flight Number: <%= flight.flightNo %></label><br>
-  <input type="submit" value="Add Ticket">
-</form>
-</div>  
+  <div class="top">
+    <h2>New Ticket</h2>
+  </div>
+  <div class="forms">
+    <br>
+    <form action="/tickets/<%= flight._id %>" method="POST">
+      <label>Seat:</label>
+      <input type="text" name="seat" required pattern="[A-F][1-9]\d?">
+      <br>
+      <p>example F9</p>
+      <br>
+      <label>Price:</label>
+      <input type="number" name="price" required>
+      <br>
+      <label>Flight Number: <%= flight.flightNo %></label>
+      <br>
+      <button class="add-ticket" type="submit" value="Add Ticket">Add Ticket</button>
+    </form>
+  </div>
 </main>
