@@ -25,8 +25,9 @@
           <td class="airline"><%= f.airline %></td>
           <td class="airport"><%= f.airport %></td>
           <td class="flightNo"><%= f.flightNo %></td>
-          <td class="departs_date"><%= f.departs.toDateString() %></td>
-          <td class="departs_time"><%= f.departs.toTimeString() %></td>
+          <td class="departs_day"><%= moment(f.departs).format("ddd") %> </td>
+          <td class="departs_date"><%= moment(f.departs).format("LL") %></td>
+          <td class="departs_time"><%= moment(f.departs).format("LT z") %></td>
           <td class="detail"><a href="/flights/<%= f.id %>"><div class="button">Details</div></a></td>
         </tr>
       <% }); %>
