@@ -75,7 +75,7 @@
       <% ticket.forEach((t) => { %>
       <tr>
         <th class="dest"><%= t.seat %></th>
-        <td class="td1"><%= t.price %></td>
+        <td class="td1"><%= t.price %> $</td>
         <td class="detail">
           <form action="/tickets/<%= t.flight %>/<%= t._id %>?_method=DELETE" method="POST">
             <button class="delete" type="submit"><span>remove</span></button>
