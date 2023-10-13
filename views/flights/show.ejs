@@ -64,13 +64,7 @@
   <h2>Tickets: <button class="tickets-button" onclick="window.location.href='/flights/<%= flight._id %>/tickets/new'">Add Ticket</button></h2>
   <% if (ticket.length) { %>
   <table>
-    <thead>
-      <tr>
-        <th>Seat</th>
-        <th>Price</th>
-        <th></th>
-      </tr>
-    </thead>
+   
     <tbody class="tb1">
       <% ticket.forEach((t) => { %>
       <tr>
